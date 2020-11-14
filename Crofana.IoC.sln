@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crofana.IoC", "Crofana.IoC\Crofana.IoC.csproj", "{02BBB33C-EF9E-4482-960F-42061F6B41E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crofana.IoC.Test", "Crofana.IoC.Test\Crofana.IoC.Test.csproj", "{81164AF4-3670-4127-83E3-E1B4EA0C80D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02BBB33C-EF9E-4482-960F-42061F6B41E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02BBB33C-EF9E-4482-960F-42061F6B41E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02BBB33C-EF9E-4482-960F-42061F6B41E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02BBB33C-EF9E-4482-960F-42061F6B41E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81164AF4-3670-4127-83E3-E1B4EA0C80D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81164AF4-3670-4127-83E3-E1B4EA0C80D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81164AF4-3670-4127-83E3-E1B4EA0C80D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81164AF4-3670-4127-83E3-E1B4EA0C80D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6F7D583-F1D2-4D72-9823-A50E95BF0D57}
+	EndGlobalSection
+EndGlobal
