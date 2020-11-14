@@ -1,5 +1,4 @@
 ﻿using System;
-using Crofana.IoC;
 
 namespace Crofana.IoC.Test
 {
@@ -25,13 +24,14 @@ namespace Crofana.IoC.Test
     class CrofanaObject3
     {
         public int x = 50;
+        private CrofanaObject3() { }
     }
 
     class Program
     {
         static void Main(string[] args)
         {
-            SimpleCrofanaObjectFactory cof = new SimpleCrofanaObjectFactory();
+            StandardCrofanaObjectFactory cof = new StandardCrofanaObjectFactory();
 
             var co = cof.GetObject<CrofanaObject1>();
 

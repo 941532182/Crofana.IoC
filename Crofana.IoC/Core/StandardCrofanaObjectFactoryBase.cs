@@ -9,7 +9,7 @@ namespace Crofana.IoC
 
         public virtual string GetConfigPath(Type type) => type.GetCustomAttribute<ConfigPathAttribute>()?.Path;
 
-        public abstract IInstantiationPolicy GetInstantiationPolicy(Type type);
+        public abstract Scope GetScope(Type type);
 
         public abstract object GetObject(Type type);
 

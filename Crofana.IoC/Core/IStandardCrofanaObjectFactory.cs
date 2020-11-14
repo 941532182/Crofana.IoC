@@ -4,5 +4,5 @@ using System.Text;
 
 namespace Crofana.IoC
 {
-    interface IStandardCrofanaObjectFactory : IHierarchicalCrofanaObjectFactory, IAutowireableCrofanaObjectFactory, IConfigurableCrofanaObjectFactory, IMultiInstantiationPolicyCrofanaObjectFactory { }
+    interface IStandardCrofanaObjectFactory : IHierarchicalCrofanaObjectFactory, IAutowireableCrofanaObjectFactory, IConfigurableCrofanaObjectFactory, IScopedCrofanaObjectFactory { }
 }
