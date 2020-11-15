@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
 
-using Crofana.Extension.Reflection;
+using Crofana.Extension;
 
 namespace Crofana.IoC
 {
@@ -106,6 +106,7 @@ namespace Crofana.IoC
                .ToList()
                .ForEach(x =>
                {
+                   if (!x.HasAttributeRecursive<AutowiredAttribute>()) return;
                    if (x.MemberType == MemberTypes.Field)
                    {
                        FieldInfo field = x as FieldInfo;
@@ -117,9 +118,13 @@ namespace Crofana.IoC
                    else
                    {
                        PropertyInfo prop = x as PropertyInfo;
-                       if (prop != null && prop.SetMethod != null && prop.PropertyType.HasAttributeRecursive<CrofanaObjectAttribute>())
+                       if (prop.SetMethod == null)
                        {
-                           prop.SetMethod.Invoke(obj, new object[] { GetObject(prop.PropertyType) });
+                           throw new SetterNotFoundException(prop);
+                       }
+                       if (prop != null && prop.PropertyType.HasAttributeRecursive<CrofanaObjectAttribute>())
+                       {
+                           prop.SetValue(obj, GetObject(prop.PropertyType));
                        }
                    }
                });
