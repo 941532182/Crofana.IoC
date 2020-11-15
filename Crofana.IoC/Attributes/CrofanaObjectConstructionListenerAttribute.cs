@@ -8,18 +8,17 @@ namespace Crofana.IoC
     [CrofanaObject]
     [Scope(Scope.Singleton)]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-    public class CrofanaObjectConstructionListenerAttribute : Attribute
-    {
-        /// <summary>
-        /// 此方法将在CrofanaObject的构造函数执行之前执行
-        /// </summary>
-        [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
-        public class PreConstructAttribute : Attribute { }
+    public class CrofanaObjectConstructionListenerAttribute : Attribute { }
 
-        /// <summary>
-        /// 此方法将在CrofanaObject的构造函数执行之后执行
-        /// </summary>
-        [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
-        public class PostConstructAttribute : Attribute { }
-    }
+    /// <summary>
+    /// 此方法将在CrofanaObject的构造函数执行之前执行
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+    public class PreConstructAttribute : Attribute { }
+
+    /// <summary>
+    /// 此方法将在CrofanaObject的构造函数执行之后执行
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+    public class PostConstructAttribute : Attribute { }
 }

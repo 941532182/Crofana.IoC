@@ -12,19 +12,27 @@ namespace Crofana.IoC.Test
         [Autowired]
         public CrofanaObject3 co3 { get; set; }
         public CrofanaObject2 CO2 => co2;
+        public int x = 999;
     }
 
     [CrofanaObject]
     class CrofanaObject2
     {
         public int x = 10;
+        [Autowired]
+        public CrofanaObject1 co1;
     }
 
-    [CrofanaObject]
+    [CrofanaObjectConstructionListener]
     class CrofanaObject3
     {
         public int x = 50;
         private CrofanaObject3() { }
+        [PostConstruct]
+        private void PostConstruct(object obj)
+        {
+            Console.WriteLine($"POST CONSTRUCT: {obj.GetType().FullName}");
+        }
     }
 
     class Program
@@ -37,6 +45,7 @@ namespace Crofana.IoC.Test
 
             Console.WriteLine(co.CO2.x);
             Console.WriteLine(co.co3.x);
+            Console.WriteLine(co.CO2.co1.x);
         }
     }
 }
